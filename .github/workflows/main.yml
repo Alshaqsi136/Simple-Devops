@@ -32,7 +32,7 @@ jobs:
           password: "vpml fvst kezt klrc"
 
           subject: "Build Success ✅"
-          body: "Your GitHub Actions workflow completed successfully!"
+          body: "It worked in production just like in local host "
           to: nasseor4@gmail.com
           from: alshaqsi136@gmail.com
           secure: true
