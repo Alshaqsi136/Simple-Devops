@@ -4,7 +4,7 @@
     server_address: smtp.gmail.com
     server_port: 465
     username: alshaqsi136@gmail.com
-    password: vpml fvst kezt klrc
+    password: "vpml fvst kezt klrc"
     subject: "Build Success"
     body: "Your GitHub Actions workflow completed successfully!"
     to: nasseor4@gmail.com
