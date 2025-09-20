@@ -1,57 +1,12 @@
-name: Send Email Notification
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run build
-        run: |
-          echo "Building your project..."
-
-  notify:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Load .env
-        run: |
-          echo "Loading .env variables"
-          export $(grep -v '^#' .env | xargs)
-
-      - name: Send Success Email
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: $EMAIL_USER
-          password: $EMAIL_PASS
-          subject: "Build Success"
-          body: "Your GitHub Actions workflow completed successfully!"
-          to: nasseor4@gmail.com
-          from: $EMAIL_USER
-          secure: true
-
-      - name: Send Failure Email
-        if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: "alshaqsi136@gmail.com"
-          password: "vpml fvst kezt klrc"
-          subject: "Build Failed ❌"
-          body: "Your GitHub Actions workflow failed. Check the logs!"
-          to: nasseor4@gmail.com
-          from: $EMAIL_USER
-          secure: true
+- name: Send Success Email
+  uses: dawidd6/action-send-mail@v3
+  with:
+    server_address: smtp.gmail.com
+    server_port: 465
+    username: $EMAIL_USER
+    password: $EMAIL_PASS
+    subject: "Build Success"
+    body: "Your GitHub Actions workflow completed successfully!"
+    to: nasseor4@gmail.com
+    from: $EMAIL_USER
+    secure: true
