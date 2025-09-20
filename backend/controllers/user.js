@@ -1,4 +1,3 @@
 exports.postuser = (req, res, next) => {
-  const username = req.body.username;  
-    const pass = req.body.pass};
+res.status(200).json({ message: 'Successfully send to the backend' })  };
     
