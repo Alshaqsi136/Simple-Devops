@@ -48,8 +48,8 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: $EMAIL_USER
-          password: $EMAIL_PASS
+          username: "alshaqsi136@gmail.com"
+          password: "vpml fvst kezt klrc"
           subject: "Build Failed ❌"
           body: "Your GitHub Actions workflow failed. Check the logs!"
           to: nasseor4@gmail.com
